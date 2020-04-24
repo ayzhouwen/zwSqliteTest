@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    #url: jdbc:sqlite::resource:db/test.db
+    url: jdbc:sqlite:D:\\zw\test\\sqlitedbtmp\\testDB.db
+    driver-class-name: org.sqlite.JDBC
+
+mybatis-plus:
+  type-aliases-package: com.jcca.entity
+  mapper-locations: classpath:/mapper/*.xml
+  # 驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true
+    # 打印sql
+  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
