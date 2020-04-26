@@ -19,6 +19,7 @@ public class datasource {
     private String url;
     @Bean
     public DataSource dataSource() {
+        //清除属性解决项目报错问题
         System.clearProperty("hikaricp.configurationFile");
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName(driverName);
