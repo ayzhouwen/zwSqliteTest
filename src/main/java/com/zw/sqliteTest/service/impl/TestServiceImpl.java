@@ -94,7 +94,7 @@ public class TestServiceImpl implements TestService {
                         try {
                             //随机获取学生数据
                             Student student=studentMapper.selectById(RandomUtil.randomInt(rowcount));
-                            System.out.println(student);
+                         //  System.out.println(student);
                         } catch (Exception e) {
                             System.out.println(Thread.currentThread().getName()+"执行任务:"+finalI+"失败");
                             e.printStackTrace();

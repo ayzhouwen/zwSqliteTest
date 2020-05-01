@@ -2,6 +2,7 @@ spring:
   datasource:
     #url: jdbc:sqlite::resource:db/test.db
     url: jdbc:sqlite:D:\\zw\test\\sqlitedbtmp\\testDB.db
+#    url: jdbc:sqlite:C:\\test\\sqlitedbtmp\\testDB.db
     driver-class-name: org.sqlite.JDBC
 
 mybatis-plus:
