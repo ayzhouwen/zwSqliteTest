@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SqliteTestApplication {
 
 	public static void main(String[] args) {
-		System.setProperty("hikaricp.configurationFile","hikaricp.configurationFile");
 		SpringApplication.run(SqliteTestApplication.class, args);
 	}
 

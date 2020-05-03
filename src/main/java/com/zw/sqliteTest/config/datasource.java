@@ -19,8 +19,6 @@ public class datasource {
     private String url;
     @Bean
     public DataSource dataSource() {
-        //清除属性解决项目报错问题
-        System.clearProperty("hikaricp.configurationFile");
         HikariConfig hikariConfig = new HikariConfig();
         hikariConfig.setDriverClassName(driverName);
         hikariConfig.setJdbcUrl(url);
@@ -39,6 +37,7 @@ public class datasource {
         config.setOpenMode(SQLiteOpenMode.NOMUTEX);
         hikariConfig.setPoolName("springHikariCP");
         hikariConfig.addDataSourceProperty(SQLiteConfig.Pragma.OPEN_MODE.pragmaName, config.getOpenModeFlags());
+        hikariConfig.addDataSourceProperty(SQLiteConfig.Pragma.JOURNAL_MODE.pragmaName, SQLiteConfig.JournalMode.WAL );
         HikariDataSource dataSource = new HikariDataSource(hikariConfig);
         return dataSource;
     }
