@@ -1,4 +1,4 @@
-package com.zw.sqliteTest.config;
+package com.zw.sqliteTest.config.db;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -10,8 +10,11 @@ import org.sqlite.SQLiteOpenMode;
 
 import javax.sql.DataSource;
 
+/**
+ * 读写分离并不适合sqlite数据库,读写分离只会造成锁库报错问题,生产单连接+wal就可以了
+ */
 @Configuration
-public class datasource {
+public class DefaultDatasource {
 
     @Value("${spring.datasource.driver-class-name}")
     private String driverName;

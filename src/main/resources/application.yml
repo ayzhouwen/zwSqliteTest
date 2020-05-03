@@ -13,3 +13,5 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     # 打印sql
   log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: true

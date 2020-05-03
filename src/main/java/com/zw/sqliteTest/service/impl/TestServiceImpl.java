@@ -7,6 +7,7 @@ import cn.hutool.core.util.RandomUtil;
 import com.zw.sqliteTest.entity.Student;
 import com.zw.sqliteTest.mapper.StudentMapper;
 import com.zw.sqliteTest.service.TestService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Service
+@Slf4j
 public class TestServiceImpl implements TestService {
     @Autowired
     private StudentMapper studentMapper;
@@ -94,7 +96,7 @@ public class TestServiceImpl implements TestService {
                         try {
                             //随机获取学生数据
                             Student student=studentMapper.selectById(RandomUtil.randomInt(rowcount));
-                         //  System.out.println(student);
+                            // log.info(student.toString());
                         } catch (Exception e) {
                             System.out.println(Thread.currentThread().getName()+"执行任务:"+finalI+"失败");
                             e.printStackTrace();
