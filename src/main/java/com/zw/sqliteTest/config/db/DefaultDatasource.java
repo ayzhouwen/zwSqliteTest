@@ -26,7 +26,6 @@ public class DefaultDatasource {
         hikariConfig.setDriverClassName(driverName);
         hikariConfig.setJdbcUrl(url);
         //sqlite能单连接写,不能多个连接并发写,如果业务层数多线程并发写会报Cause: org.sqlite.SQLiteException: [SQLITE_BUSY]  The database file is locked (database is locked)
-        //从而导致写入失败,极限性能生产环境推荐一写多读模式+配置sqlite的wal模式,多连接并发读是可以的
         Integer busThreadNum=Runtime.getRuntime().availableProcessors()*2;
         System.out.println("数据库连接数:"+busThreadNum);
 
