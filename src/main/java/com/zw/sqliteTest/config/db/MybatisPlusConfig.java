@@ -16,10 +16,10 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 /**
- * 读写分离并不适合sqlite数据库,读写分离只会造成锁库报错问题,生产单连接+wal就可以了
+ *
  */
-//@Configuration
-//@MapperScan("com.zw.sqliteTest.**.mapper*")
+@Configuration
+@MapperScan("com.zw.sqliteTest.**.mapper*")
 public class MybatisPlusConfig {
     /**
      * xml文件所在路径

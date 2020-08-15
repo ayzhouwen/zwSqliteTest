@@ -19,17 +19,17 @@ public class DBContextHolder {
         return contextHolder.get();
     }
 
-    public static void workMaster() {
+    public static void  workMaster() {
         set(DBTypeEnum.WORKDB_MASTER);
 
-            log.info("数据源切换至master");
+            log.info("@@@@@@@数据源切换至master@@@@@@@");
 
     }
 
     public static void workSlave() {
         set(DBTypeEnum.WORKDB_SLAVE);
 
-            log.info("数据源切换至slave");
+            log.info("#######数据源切换至slave#####");
 
     }
 

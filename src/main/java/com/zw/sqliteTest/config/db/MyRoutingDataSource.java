@@ -6,7 +6,7 @@ import org.springframework.lang.Nullable;
 public class MyRoutingDataSource extends AbstractRoutingDataSource {
     @Nullable
     @Override
-    protected Object determineCurrentLookupKey() {
+    protected Object  determineCurrentLookupKey() {
         return DBContextHolder.get();
     }
 }

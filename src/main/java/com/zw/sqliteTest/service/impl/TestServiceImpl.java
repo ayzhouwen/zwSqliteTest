@@ -45,9 +45,9 @@ public class TestServiceImpl implements TestService {
 
                             studentMapper.insert(student);
 
-                            //Student student2= studentMapper.selectById(finalI-3);
-                            //System.out.println(Thread.currentThread().getName()+"student2.getId:"+student2.getId());
-                            //select(); //应用层多线程读写在使用一个连接的情况下很稳定,不很锁库
+                            Student student2= studentMapper.selectById(finalI-3);
+                            System.out.println(Thread.currentThread().getName()+"student2.getId:"+student2.getId());
+                           // selectTest(20); //应用层多线程读写在使用一个连接的情况下很稳定,不很锁库
 
                             //System.out.println(Thread.currentThread().getName()+"执行任务:"+finalI+"完毕");
                         } catch (Exception e) {

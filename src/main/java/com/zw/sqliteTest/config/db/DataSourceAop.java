@@ -6,10 +6,10 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 /**
- * 读写分离并不适合sqlite数据库,读写分离只会造成锁库报错问题,生产单连接+wal就可以了
+ *
  */
-//@Aspect
-//@Component
+@Aspect
+@Component
 @Slf4j
 public class DataSourceAop {
 
